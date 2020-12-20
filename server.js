@@ -5,16 +5,12 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-
 app.use(logger("dev"));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // routes
-// app.use(require("./routes/api-routes.js"));
-// app.use(require("./routes/html-routes.js"));
-
 require("./routes/api-routes")(app);
 require("./routes/html-routes")(app);
 
@@ -24,8 +20,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useCreateIndex: true,
   useFindAndModify: false
 });
-
-
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);

@@ -5,19 +5,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css" />
-  <title>Fitness Tracker</title>
+  <title>FitTrax</title>
 </head>
 
 <body>
   <nav>
-    <a href="/">Fitness Tracker</a>
-    <a href="/stats">Dashboard</a>
+    <a href="/"><div class="ui animated fade button" tabindex="0">
+      <div class="visible content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-dumbbell" style="font-size: 1.5em; color: Tomato;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      <div class="hidden content">
+        FitTrax
+      </div>
+    </div></a>
+    <a href="/stats"><div class="ui animated fade button" tabindex="0">
+      <div class="visible content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-poll" style="font-size: 1.5em; color: Tomato;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      <div class="hidden content">
+        Stats
+      </div>
+    </div></a>
   </nav>
   <div class="wrapper">
     <header>
-      <h1>Fitness Tracker</h1>
+      <p class="tomato">FitTrax</p>
     </header>
     <div class="ui container exercise">
       <div class="ui raised card m-auto">

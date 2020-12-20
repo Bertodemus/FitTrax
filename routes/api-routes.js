@@ -1,9 +1,8 @@
-// const router = require("express").Router();
-// const Workout = require("../models/Workout.js");
 var db = require("../models");
-
+//setup for api routes
 module.exports = function(app) {
 
+  //posting data route
   app.post("/api/workouts/", ({body}, res) => {
     console.log("workouts", body);
     db.Workout.create(body)
@@ -15,6 +14,7 @@ module.exports = function(app) {
       });
   });
 
+  //put data route for new exercise
   app.put("/api/workouts/:id", ({ body, params }, res) => {
     console.log("workout ID", body, params.id);
     db.Workout.findByIdAndUpdate(params.id, { $push: { exercises: [body] } }, { new: true})
@@ -26,6 +26,7 @@ module.exports = function(app) {
       });
   });
 
+  //get latest workouts
   app.get("/api/workouts/", (req, res) => {
     db.Workout.find({})
       .then(dbworkout => {
@@ -36,6 +37,7 @@ module.exports = function(app) {
       });
   });
 
+  //get all workouts
   app.get("/api/workouts/range", (req, res) => {
     db.Workout.find({})
       .then(dbworkout => {

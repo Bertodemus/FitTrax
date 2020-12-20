@@ -1,33 +1,23 @@
-// const router = require("express").Router();
 var path = require("path");
-
+//setup for html routes
 module.exports = function(app) {
+
+  //index page
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
+  //exercise page
   app.get("/exercise", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/exercise.html"));
   });
 
+  //stats page
   app.get("/stats", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/stats.html"));
   });
 };
 
-// module.exports = function(app) {
-//   router.get("/", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/index.html"));
-//   });
-
-//   router.get("/exercise", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/exercise.html"));
-//   });
-
-//   router.get("/stats", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/stats.html"));
-//   });
-// };
 
 
 
